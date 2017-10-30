@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.16
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserRegistrationAndLogin", "UserRegistrationAndLogin\UserRegistrationAndLogin.csproj", "{711276FD-F50A-4213-B5DA-DD2EC1CBF285}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserRegistrationAndLoginTests", "UnitTestProject1\UserRegistrationAndLoginTests.csproj", "{168C6A6A-261D-4BE5-9825-2D030624DE75}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{711276FD-F50A-4213-B5DA-DD2EC1CBF285}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{711276FD-F50A-4213-B5DA-DD2EC1CBF285}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{711276FD-F50A-4213-B5DA-DD2EC1CBF285}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{711276FD-F50A-4213-B5DA-DD2EC1CBF285}.Debug|x64.Build.0 = Debug|Any CPU
+		{711276FD-F50A-4213-B5DA-DD2EC1CBF285}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{711276FD-F50A-4213-B5DA-DD2EC1CBF285}.Release|Any CPU.Build.0 = Release|Any CPU
+		{711276FD-F50A-4213-B5DA-DD2EC1CBF285}.Release|x64.ActiveCfg = Release|Any CPU
+		{711276FD-F50A-4213-B5DA-DD2EC1CBF285}.Release|x64.Build.0 = Release|Any CPU
+		{168C6A6A-261D-4BE5-9825-2D030624DE75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{168C6A6A-261D-4BE5-9825-2D030624DE75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{168C6A6A-261D-4BE5-9825-2D030624DE75}.Debug|x64.ActiveCfg = Debug|x64
+		{168C6A6A-261D-4BE5-9825-2D030624DE75}.Debug|x64.Build.0 = Debug|x64
+		{168C6A6A-261D-4BE5-9825-2D030624DE75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{168C6A6A-261D-4BE5-9825-2D030624DE75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{168C6A6A-261D-4BE5-9825-2D030624DE75}.Release|x64.ActiveCfg = Release|x64
+		{168C6A6A-261D-4BE5-9825-2D030624DE75}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

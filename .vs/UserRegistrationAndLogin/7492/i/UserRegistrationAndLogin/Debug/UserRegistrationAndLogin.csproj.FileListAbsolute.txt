@@ -1,0 +1,5 @@
+c:\users\administrator\documents\visual studio 2017\Projects\UserRegistrationAndLogin\.vs\UserRegistrationAndLogin\7492\b\UserRegistrationAndLogin\bin\Debug\UserRegistrationAndLogin.dll.config
+c:\users\administrator\documents\visual studio 2017\Projects\UserRegistrationAndLogin\.vs\UserRegistrationAndLogin\7492\b\UserRegistrationAndLogin\bin\Debug\UserRegistrationAndLogin.dll
+c:\users\administrator\documents\visual studio 2017\Projects\UserRegistrationAndLogin\.vs\UserRegistrationAndLogin\7492\b\UserRegistrationAndLogin\bin\Debug\UserRegistrationAndLogin.pdb
+c:\users\administrator\documents\visual studio 2017\Projects\UserRegistrationAndLogin\.vs\UserRegistrationAndLogin\7492\i\UserRegistrationAndLogin\Debug\UserRegistrationAndLogin.dll
+c:\users\administrator\documents\visual studio 2017\Projects\UserRegistrationAndLogin\.vs\UserRegistrationAndLogin\7492\i\UserRegistrationAndLogin\Debug\UserRegistrationAndLogin.pdb

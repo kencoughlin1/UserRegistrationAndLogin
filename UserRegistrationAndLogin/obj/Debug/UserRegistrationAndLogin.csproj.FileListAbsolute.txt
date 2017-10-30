@@ -1,0 +1,15 @@
+c:\users\administrator\documents\visual studio 2017\Projects\UserRegistrationAndLogin\UserRegistrationAndLogin\bin\Debug\UserRegistrationAndLogin.dll.config
+c:\users\administrator\documents\visual studio 2017\Projects\UserRegistrationAndLogin\UserRegistrationAndLogin\bin\Debug\UserRegistrationAndLogin.dll
+c:\users\administrator\documents\visual studio 2017\Projects\UserRegistrationAndLogin\UserRegistrationAndLogin\bin\Debug\UserRegistrationAndLogin.pdb
+c:\users\administrator\documents\visual studio 2017\Projects\UserRegistrationAndLogin\UserRegistrationAndLogin\bin\Debug\BCrypt.Net-Core.dll
+c:\users\administrator\documents\visual studio 2017\Projects\UserRegistrationAndLogin\UserRegistrationAndLogin\bin\Debug\EntityFramework.dll
+c:\users\administrator\documents\visual studio 2017\Projects\UserRegistrationAndLogin\UserRegistrationAndLogin\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\administrator\documents\visual studio 2017\Projects\UserRegistrationAndLogin\UserRegistrationAndLogin\bin\Debug\System.Data.SQLite.dll
+c:\users\administrator\documents\visual studio 2017\Projects\UserRegistrationAndLogin\UserRegistrationAndLogin\bin\Debug\System.Data.SQLite.EF6.dll
+c:\users\administrator\documents\visual studio 2017\Projects\UserRegistrationAndLogin\UserRegistrationAndLogin\bin\Debug\System.Data.SQLite.Linq.dll
+c:\users\administrator\documents\visual studio 2017\Projects\UserRegistrationAndLogin\UserRegistrationAndLogin\bin\Debug\EntityFramework.xml
+c:\users\administrator\documents\visual studio 2017\Projects\UserRegistrationAndLogin\UserRegistrationAndLogin\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\administrator\documents\visual studio 2017\Projects\UserRegistrationAndLogin\UserRegistrationAndLogin\bin\Debug\System.Data.SQLite.xml
+c:\users\administrator\documents\visual studio 2017\Projects\UserRegistrationAndLogin\UserRegistrationAndLogin\bin\Debug\System.Data.SQLite.dll.config
+c:\users\administrator\documents\visual studio 2017\Projects\UserRegistrationAndLogin\UserRegistrationAndLogin\obj\Debug\UserRegistrationAndLogin.dll
+c:\users\administrator\documents\visual studio 2017\Projects\UserRegistrationAndLogin\UserRegistrationAndLogin\obj\Debug\UserRegistrationAndLogin.pdb
