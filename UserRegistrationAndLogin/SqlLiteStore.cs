@@ -10,14 +10,19 @@ namespace UserRegistrationAndLogin
     public class SqlLiteStore
     {
         private SQLiteConnection dbConnection;
+        private string file;
 
+        public SqlLiteStore()
+        {
+            file = new DirectoryInfo(Environment.CurrentDirectory) + "Users.sqlite";
+            dbConnection = new SQLiteConnection("Data Source=" + file + ";Version=3;");
 
+        }
 
         public void CreateSqlLiteStore()
         {
 
-            var file = new DirectoryInfo(Environment.CurrentDirectory) + "Users.sqlite";
-            dbConnection = new SQLiteConnection("Data Source=" + file +";Version=3;");
+ 
 
             if (!File.Exists(file))
             {
@@ -36,6 +41,24 @@ namespace UserRegistrationAndLogin
 
         }
 
+        public void CleanDownSqlLiteStore()
+        {
+            if (File.Exists(file))
+            {
+                SQLiteConnection.CreateFile(file);
+
+
+                dbConnection.Open();
+
+                string sql = "DELETE FROM Users";
+                SQLiteCommand command = new SQLiteCommand(sql, dbConnection);
+                command.ExecuteNonQuery();
+
+                dbConnection.Close();
+            }
+
+        }
+
         public UserStateModel GetUserModel(string Username)
         {
 
@@ -44,38 +67,37 @@ namespace UserRegistrationAndLogin
 
             try
             {
-                using (dbConnection)
-                {
-                    dbConnection.Open();
-                    string sql = "select UserName, HashedPassword, RegistrationState from Users";
 
-                    using (SQLiteCommand command = new SQLiteCommand(sql, dbConnection))
+                dbConnection.Open();
+                string sql = "select UserName, HashedPassword, RegistrationState from Users where UserName = '" + Username + "'";
+
+                using (SQLiteCommand command = new SQLiteCommand(sql, dbConnection))
+                {
+                    using (SQLiteDataReader reader = command.ExecuteReader())
                     {
-                        using (SQLiteDataReader reader = command.ExecuteReader())
+                        if (reader.HasRows)
                         {
-                            if (reader.HasRows)
+                            while (reader.Read())
                             {
-                                while (reader.Read())
-                                {
-                                    UserState.Username = reader["UserName"].ToString();
-                                    UserState.HashedPassword = reader["HashedPassword"].ToString();
-                                    UserState.RegistrationState = (UserStateModel.RegistrationStateEnum)(Int32.Parse(reader["RegistrationState"].ToString()));
-                                    UserState.UserFound = true;
-                                }
-                            }
-                            {
-                                UserState.UserFound = false;
+                                UserState.Username = reader["UserName"].ToString();
+                                UserState.HashedPassword = reader["HashedPassword"].ToString();
+                                UserState.RegistrationState = (UserStateModel.RegistrationStateEnum)(Int32.Parse(reader["RegistrationState"].ToString()));
+                                UserState.UserFound = true;
                             }
                         }
-                        dbConnection.Close();
+                        {
+                            UserState.UserFound = false;
+                        }
                     }
+
                 }
+                dbConnection.Close();
             }
             catch (SQLiteException e)
             {
             }
 
-            return new UserStateModel();
+            return UserState;
         }
 
         public void UpsertUser(UserStateModel UserStateModel)
@@ -83,17 +105,16 @@ namespace UserRegistrationAndLogin
 
             try
             {
-                using (dbConnection)
+
+                dbConnection.Open();
+                string sql = "INSERT OR IGNORE INTO Users (UserName, HashedPassword, RegistrationState ) VALUES ('" + UserStateModel.Username + "', '" + UserStateModel.HashedPassword + "', " + (int)UserStateModel.RegistrationState + "); " +
+                "UPDATE Users SET RegistrationState = " + (int)UserStateModel.RegistrationState + " WHERE UserName = '" + UserStateModel.Username + "'";
+                using (SQLiteCommand command = new SQLiteCommand(sql, dbConnection))
                 {
-                    dbConnection.Open();
-                    string sql = "INSERT OR IGNORE INTO Users(UserName, HashedPassword, RegistrationState ) VALUES('" + UserStateModel.Username + "', '" + UserStateModel.HashedPassword + "', " + UserStateModel.RegistrationState + ")" +
-                    "UPDATE Users SET RegistrationState = " + UserStateModel.RegistrationState + " WHERE UserName = '" + UserStateModel.Username + "'";
-                    using (SQLiteCommand command = new SQLiteCommand(sql, dbConnection))
-                    {
-                        command.ExecuteNonQuery();
-                        dbConnection.Close();
-                    }
+                    command.ExecuteNonQuery();
+                        
                 }
+                dbConnection.Close();
             }
             catch (SQLiteException e)
             {
