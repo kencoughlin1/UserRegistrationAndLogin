@@ -30,6 +30,7 @@ namespace UserRegistrationAndLogin
                 SQLiteCommand command = new SQLiteCommand(sql, dbConnection);
                 command.ExecuteNonQuery();
 
+                dbConnection.Close();
             }
 
 
