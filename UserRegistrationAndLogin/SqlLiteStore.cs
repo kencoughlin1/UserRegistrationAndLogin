@@ -14,7 +14,7 @@ namespace UserRegistrationAndLogin
 
         public SqlLiteStore()
         {
-            file = new DirectoryInfo(Environment.CurrentDirectory) + "Users.sqlite";
+            file = new DirectoryInfo(Environment.CurrentDirectory) + "\\Users.sqlite";
             dbConnection = new SQLiteConnection("Data Source=" + file + ";Version=3;");
 
         }
@@ -45,9 +45,6 @@ namespace UserRegistrationAndLogin
         {
             if (File.Exists(file))
             {
-                SQLiteConnection.CreateFile(file);
-
-
                 dbConnection.Open();
 
                 string sql = "DELETE FROM Users";
@@ -85,6 +82,7 @@ namespace UserRegistrationAndLogin
                                 UserState.UserFound = true;
                             }
                         }
+                        else
                         {
                             UserState.UserFound = false;
                         }

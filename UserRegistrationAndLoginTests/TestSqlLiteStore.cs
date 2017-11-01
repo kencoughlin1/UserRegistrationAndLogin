@@ -43,6 +43,16 @@ namespace UserRegistrationAndLoginTests
             Assert.IsTrue(sqlLite.GetUserModel("newuser@newuser.com").UserFound);
         }
 
+        [TestMethod]
+        public void TestUserStateModelIsFoundAndVerified()
+        {
+            string HashedPassword = BCrypt.Net.BCrypt.HashPassword("TestPassword", 10);
+            UserStateModel userModel = new UserStateModel("newuser@newuser.com", HashedPassword, UserStateModel.RegistrationStateEnum.Verified);
+            sqlLite.UpsertUser(userModel);
+            Assert.IsTrue(sqlLite.GetUserModel("newuser@newuser.com").RegistrationState == UserStateModel.RegistrationStateEnum.Verified);
+        }
+
+
 
     }
 }
